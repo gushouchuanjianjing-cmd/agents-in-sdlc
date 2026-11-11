@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的炫酷前端网页</title>
+    <style>
+        /* 1. 网页背景：紫蓝色渐变 */
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center;     /* 垂直居中 */
+            height: 100vh;           /* 占满整个屏幕高度 */
+            margin: 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        /* 2. 卡片样式：毛玻璃效果 */
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px); /* 毛玻璃模糊特效 */
+            padding: 40px;
+            border-radius: 20px;         /* 圆角 */
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* 阴影 */
+            transition: all 0.3s ease;   /* 动画过渡时间 */
+        }
+
+        /* 3. 鼠标悬浮在卡片上时，放大并上浮 */
+        .card:hover {
+            transform: translateY(-15px) scale(1.05); 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
+        }
+
+        /* 4. 按钮样式 */
+        .btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer; /* 鼠标变成小手 */
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* 鼠标悬浮在按钮上时，颜色变深且变小一点 */
+        .btn:hover {
+            background: #ff4757;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 这里只有一个卡片 -->
+    <div class="card">
+        <h1 id="title">Hello, 前端世界！</h1>
+        <p>我是未来的前端工程师，也是大作家。</p>
+        <!-- onclick="changeText()" 是点击事件的绑定 -->
+        <button class="btn" onclick="changeText()">点我试试</button>
+    </div>
+
+    <!-- 这里是 JavaScript 逻辑 -->
+    <script>
+        function changeText() {
+            // 1. 找到 id 为 title 的标签
+            var titleElement = document.getElementById("title");
+            
+            // 2. 把文字改掉
+            titleElement.innerText = "哈哈哈，你点我了！";
+            
+            // 3. 把文字颜色变成金色
+            titleElement.style.color = "#ffd700"; 
+        }
+    </script>
+
+</body>
+</html>
